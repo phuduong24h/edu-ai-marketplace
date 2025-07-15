@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import { Icons } from 'assets';
 import { Button } from 'components/form';
+import { NAME_APP } from 'constants/common';
 import { Routes } from 'routes';
 
 const CartEmpty = () => {
@@ -14,7 +15,9 @@ const CartEmpty = () => {
     <div className="flex flex-1 flex-col items-center justify-center gap-2 pb-10 pt-8">
       <Image src={Icons.cart_empty} alt="" width={120} height={120} />
       <p className="text-center text-lg font-semibold">{'"HÔNG" có gì trong giỏ hàng hết nè!🤗'}</p>
-      <p className="text-normal text-center font-bold">Lướt Lê Yên Shop, lựa hàng ngay đi</p>
+      <p className="text-normal text-center font-bold">
+        Lướt <span className="text-text-secondary">{NAME_APP}</span>, lựa hàng ngay đi
+      </p>
       <Button label="Mua sắm ngay!" variant="outline" onClick={() => router.push(Routes.SAN_PHAM)} />
     </div>
   );
